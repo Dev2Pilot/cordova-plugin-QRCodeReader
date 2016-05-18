@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-QRCodeReader" version="0.0.1">
+    <name>QRCodeReader</name>
+    <description>Cordova QRCodeReader Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,QRCode,reader,scan</keywords>
+    <repo>https://github.com/Dev2Pilot/cordova-plugin-QRCodeReader</repo>
+    <issue></issue>
+    
+    <js-module src="www/QRCodeReader.js" name="QRCodeReader">
+        <clobbers target="cordova.plugin.qrcodereader" />
+    </js-module>
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="QRCodeReader">
+                <param name="ios-package" value="CDVQRCodeReader"/>
+            </feature>
+        </config-file>
+        
+        
+        <resource-file src="src/ios/CDVQRCodeReader.bundle" />
+        
+        <header-file src="src/ios/CDVQRCodeReader.h" />
+        <source-file src="src/ios/CDVQRCodeReader.m" />
+        
+        <header-file src="src/ios/QRCodeReaderViewController/QRCodeReaderDelegate.h" />
+       
+        <header-file src="src/ios/QRCodeReaderViewController/QRCameraSwitchButton.h" />
+        <source-file src="src/ios/QRCodeReaderViewController/QRCameraSwitchButton.m" />
+        
+        <header-file src="src/ios/QRCodeReaderViewController/QRCodeReaderView.h" />
+        <source-file src="src/ios/QRCodeReaderViewController/QRCodeReaderView.m" />
+        
+        <header-file src="src/ios/QRCodeReaderViewController/QRCodeReaderViewController.h" />
+        <source-file src="src/ios/QRCodeReaderViewController/QRCodeReaderViewController.m" />
+        
+        
+        
+    </platform>
+</plugin>
+
